@@ -19,12 +19,13 @@ func NewProductLister(r ProductRepository, pc pricing.Calculater) ProductLister 
 }
 
 func (s service) List(search SearchCriteria) (*PaginatedDiscountedProducts, error) {
+
 	paginatedProducts, err := s.repository.List(search)
 	if err != nil {
 		return nil, err
 	}
 
-	discountedProducts := []*DiscountedProduct{}
+	var discountedProducts []*DiscountedProduct
 	for _, p := range paginatedProducts.Items() {
 
 		price, err := s.pricingCalculater.Calculate(*p)

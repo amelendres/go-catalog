@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+    go:
+        container_name: appto-catalog
+        image: appto-go-1.17
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                # - APP_NAME=${APP_NAME}
+                - APP_NAME=catalog
+        expose:
+            - '5000'
+        ports:
+            - '8050:5000'
+        restart: unless-stopped
+        networks:
+            - appto
+        env_file:
+            -   .env
+        volumes:
+            - .:/go/src/catalog:delegated
+            # - .:/go/src/${APP_NAME}:delegated
+
+networks:
+    appto:
+        name: appto_go

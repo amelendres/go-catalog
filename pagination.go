@@ -1,16 +1,5 @@
 package catalog
 
-// type PaginatedCollection interface {
-// 	MetaData() PaginationMeta
-// 	// Items() []*interface{}
-// 	Items() []*interface{}
-// }
-
-// type PaginatedCollection struct {
-// 	Meta  PaginationMeta `json:"meta"`
-// 	Items []*interface{} `json:"items"`
-// }
-
 type PaginationMeta struct {
 	Total      int `json:"meta"`
 	Pagination `json:"pagination"`

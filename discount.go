@@ -4,10 +4,6 @@ const EURCurrency = Currency("EUR")
 
 type DiscountPercentage int
 
-// func (d *DiscountPercentage) GreaterThan(o DiscountPercentage) bool {
-// 	return *d > o
-// }
-
 type Currency string
 
 type Discount interface {
@@ -15,7 +11,7 @@ type Discount interface {
 }
 
 type DiscountRepository interface {
-	Find(search SearchCriteria) (discounts []*Discount, err error)
+	Find(search SearchCriteria) (discounts []Discount, err error)
 }
 
 type ProductDiscount struct {
@@ -25,6 +21,10 @@ type ProductDiscount struct {
 
 func (d *ProductDiscount) Percentage() DiscountPercentage {
 	return d.percentage
+}
+
+func (d *ProductDiscount) SKU() SKU {
+	return d.sku
 }
 
 func NewProductDiscount(sku SKU, dp DiscountPercentage) Discount {
@@ -38,6 +38,10 @@ type CategoryDiscount struct {
 
 func (d *CategoryDiscount) Percentage() DiscountPercentage {
 	return d.percentage
+}
+
+func (d *CategoryDiscount) Category() Category {
+	return d.category
 }
 
 func NewCategoryDiscount(cat Category, dp DiscountPercentage) Discount {

@@ -1,0 +1,10 @@
+.idea
+.git
+.gitignore
+.DS_Store
+.build
+*.db.json
+docker-compose.yaml
+Dockerfile
+var
+

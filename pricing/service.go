@@ -17,20 +17,24 @@ func NewCalculater(r DiscountRepository) Calculater {
 }
 
 func (s service) Calculate(p Product) (*DiscountedPrice, error) {
-	//WIP  filters := [Filter{name: 'sku', value: ''}]
-	// WIP SearchCriteria
-	discounts, err := s.repository.Find(SearchCriteria{})
+
+	criteria := NewSearchCriteria(nil, []Filter{
+		NewCategoryFilter(p.Category),
+		NewSKUFilter(p.SKU),
+	})
+	discounts, err := s.repository.Find(criteria)
 	if err != nil {
 		return nil, err
 	}
+
 	if discounts == nil {
 		return NewDiscountedPrice(p.Price, nil), nil
 	}
 
-	var discount = *discounts[0]
+	var discount = discounts[0]
 	for _, d := range discounts {
-		if (*d).Percentage() > discount.Percentage() {
-			discount = (*d)
+		if d.Percentage() > discount.Percentage() {
+			discount = d
 		}
 	}
 	discountPercentage := discount.Percentage()
