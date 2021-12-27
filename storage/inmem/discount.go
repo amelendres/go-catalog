@@ -1,7 +1,7 @@
 package inmem
 
 import (
-	. "github.com/amelendres/go-catalog"
+	. "github.com/amelendres/go-catalog/catalog"
 )
 
 type DiscountRepo struct {

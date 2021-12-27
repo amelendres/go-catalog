@@ -1,6 +1,6 @@
 package mother
 
-import "github.com/amelendres/go-catalog"
+import "github.com/amelendres/go-catalog/catalog"
 
 func NewPaginatedDiscountedProducts(
 	products []*catalog.Product,

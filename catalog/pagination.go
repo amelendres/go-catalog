@@ -1,7 +1,7 @@
 package catalog
 
 type PaginationMeta struct {
-	Total      int `json:"meta"`
+	Total      int `json:"total"`
 	Pagination `json:"pagination"`
 }
 

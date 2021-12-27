@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/amelendres/go-catalog"
+	"github.com/amelendres/go-catalog/catalog"
 	"github.com/amelendres/go-catalog/http/rest"
 	"github.com/amelendres/go-catalog/listing"
 	"github.com/amelendres/go-catalog/pricing"

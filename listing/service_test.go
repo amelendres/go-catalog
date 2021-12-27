@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/amelendres/go-catalog"
+	"github.com/amelendres/go-catalog/catalog"
 	"github.com/amelendres/go-catalog/listing"
 	"github.com/amelendres/go-catalog/pricing"
 	"github.com/amelendres/go-catalog/testing/stub"

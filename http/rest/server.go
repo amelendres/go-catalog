@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/amelendres/go-catalog"
+	"github.com/amelendres/go-catalog/catalog"
 	"github.com/amelendres/go-catalog/listing"
 	"github.com/gorilla/mux"
 )

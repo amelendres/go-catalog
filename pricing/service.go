@@ -1,7 +1,7 @@
 package pricing
 
 import (
-	. "github.com/amelendres/go-catalog"
+	. "github.com/amelendres/go-catalog/catalog"
 )
 
 type Calculater interface {

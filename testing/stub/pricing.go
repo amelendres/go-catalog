@@ -1,6 +1,6 @@
 package stub
 
-import . "github.com/amelendres/go-catalog"
+import . "github.com/amelendres/go-catalog/catalog"
 
 type StubDiscountRepo struct {
 	discounts []Discount
